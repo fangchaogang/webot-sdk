@@ -1,7 +1,7 @@
 {
     "name": "fangchaogang/webot-sdk",
     "description": "WECHAT ROBOT SDK",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
       {
         "name": "fangchaogang",
