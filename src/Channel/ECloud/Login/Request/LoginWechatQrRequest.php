@@ -11,6 +11,7 @@ use Webot\Channel\ECloud\Request;
  * @package Webot\Channel\ECloud\Login\Request
  * @method $this setWcId(string $wcId)
  * @method $this setProxy(int $proxy)
+ * @method $this setDeviceType(string $deviceType)
  * @method $this setProxyIp(string $proxyIp)
  * @method $this setProxyUser(string $proxyUser)
  * @method $this setProxyPassword(string $proxyPassword)
@@ -34,6 +35,9 @@ class LoginWechatQrRequest extends Request
      *
      * setProxyIp(string $proxyIp)
      * 非必填：自定义长效代理IP+端口
+     *
+     * setDeviceType(string $deviceType)
+     * 必填：设备类型：ipad【默认】、mac、ipadpro
      *
      * setProxyUser(string $proxyUser)
      * 非必填：自定义长效代理IP平台账号

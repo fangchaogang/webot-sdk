@@ -56,23 +56,24 @@ class ECloudTest extends TestCase
         //2、消息
         //$this->send();
         //3、群
-        //$this->chatroom();
+        $this->chatroom();
         //4、账户
         //$this->account();
         //5、好友
         //$this->friend();
         //6、特殊权限
-        $this->util();
+        //$this->util();
     }
 
     protected function send()
     {
-//        $request = new SendTextRequest();
-//        $response = $request->setAuthorization($this->authorization)
-//            ->setWId('27863af5-8994-4460-9c83-af97dc66b431')
-//            ->setWcId('43353608733@chatroom')
-//            ->setContent('text')
-//            ->request($this->app());
+        $request = new SendAtTextRequest();
+        $response = $request->setAuthorization($this->authorization)
+            ->setWId('0bc5d96d-5855-432c-9eb8-a698277e2a2b')
+            ->setWcId('43512229329@chatroom')
+            ->setContent('@彭开怀 okk')
+            ->setAt('25984983978910644@openim')
+            ->request($this->app());
 //        $request = new SendFileRequest();
 //        $response = $request->setAuthorization($this->authorization)
 //            ->setWId('27863af5-8994-4460-9c83-af97dc66b431')
@@ -177,11 +178,11 @@ class ECloudTest extends TestCase
 //            )
 //            ->request($this->app());
 
-        $request = new DownloadVideoResRequest();
-        $response = $request->setAuthorization($this->authorization)
-            ->setId('bbb1cb77-57ce-4097-9aa5-40cb82543c03')
-            ->request($this->app());
-        var_dump($response->getId(),$response->getUrl(),$response->getType(),$response->getDes());
+//        $request = new DownloadVideoResRequest();
+//        $response = $request->setAuthorization($this->authorization)
+//            ->setId('bbb1cb77-57ce-4097-9aa5-40cb82543c03')
+//            ->request($this->app());
+//        var_dump($response->getId(),$response->getUrl(),$response->getType(),$response->getDes());
 
 
     }
@@ -248,12 +249,12 @@ class ECloudTest extends TestCase
     }
     protected function chatroom()
     {
-//        $request = new GetChatroomInfoRequest();
-//        $response = $request->setAuthorization($this->authorization)
-//            ->setWId('fa3d7247-76ed-4f00-9e67-3a9a10f438c2')
-//            ->setChatRoomId('43353608733@chatroom')
-//            ->request($this->app());
-//        var_dump($response->getChatRoomId(),$response->getNickName(),$response->getChatRoomOwner(),$response->getBigHeadImgUrl(),$response->getSmallHeadImgUrl(),$response->getMemberCount(),$response->getV1(),$response->getMemberCount(),$response->getChatRoomMembers());
+        $request = new GetChatroomInfoRequest();
+        $response = $request->setAuthorization($this->authorization)
+            ->setWId('0bc5d96d-5855-432c-9eb8-a698277e2a2b')
+            ->setChatRoomId('43512229329@chatroom')
+            ->request($this->app());
+        var_dump($response->getChatRoomId(),$response->getNickName(),$response->getChatRoomOwner(),$response->getBigHeadImgUrl(),$response->getSmallHeadImgUrl(),$response->getMemberCount(),$response->getV1(),$response->getMemberCount(),$response->getChatRoomMembers());
 //        $request = new GetChatroomMemberRequest();
 //        $members = $request->setAuthorization($this->authorization)
 //            ->setWId('fa3d7247-76ed-4f00-9e67-3a9a10f438c2')
@@ -265,21 +266,21 @@ class ECloudTest extends TestCase
 //        }
 //        $request = new GetChatroomMemberInfoRequest();
 //        $memberInfos = $request->setAuthorization($this->authorization)
-//            ->setWId('fa3d7247-76ed-4f00-9e67-3a9a10f438c2')
-//            ->setChatRoomId('43353608733@chatroom')
-//            ->setUserList('wxid_6el15pr76of321')
+//            ->setWId('9e14c5d3-e4c9-4034-a057-e1202d1afaea')
+//            ->setChatRoomId('43512229329@chatroom')
+//            ->setUserList('25984983978910644@openim')
 //            ->request($this->app());
 //        /** @var GetChatroomMemberInfoResponse $memberInfo */
 //        foreach ($memberInfos as $memberInfo) {
 //            var_dump($memberInfo->getUserName(),$memberInfo->getNickName(),$memberInfo->getRemark(),$memberInfo->getSignature(),$memberInfo->getSex(),$memberInfo->getCountry(),$memberInfo->getProvince(),$memberInfo->getCity(),$memberInfo->getBigHead(),$memberInfo->getSmallHead(),$memberInfo->getV1(),$memberInfo->getV2());
 //        }
 
-        $request = new AgreeChatroomInviteRequest();
-        $response = $request->setAuthorization($this->authorization)
-            ->setWId('fa3d7247-76ed-4f00-9e67-3a9a10f438c2')
-            ->setUrl('https://support.weixin.qq.com/cgi-bin/mmsupport-bin/addchatroombyinvite?ticket=AToGerLb/F3A/b6h8fw/lQ==')
-            ->request($this->app());
-        var_dump($response);
+//        $request = new AgreeChatroomInviteRequest();
+//        $response = $request->setAuthorization($this->authorization)
+//            ->setWId('fa3d7247-76ed-4f00-9e67-3a9a10f438c2')
+//            ->setUrl('https://support.weixin.qq.com/cgi-bin/mmsupport-bin/addchatroombyinvite?ticket=AToGerLb/F3A/b6h8fw/lQ==')
+//            ->request($this->app());
+//        var_dump($response);
 
     }
     protected function friend()
