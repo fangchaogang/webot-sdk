@@ -12,6 +12,7 @@ use Webot\Channel\ECloud\Request;
  * @method $this setWcId(string $wcId)
  * @method $this setProxy(int $proxy)
  * @method $this setDeviceType(string $deviceType)
+ * @method $this setAid(string $aid)
  * @method $this setProxyIp(string $proxyIp)
  * @method $this setProxyUser(string $proxyUser)
  * @method $this setProxyPassword(string $proxyPassword)
@@ -38,6 +39,9 @@ class LoginWechatQrRequest extends Request
      *
      * setDeviceType(string $deviceType)
      * 必填：设备类型：ipad【默认】、mac、ipadpro
+     *
+     * setAid(string $aid)
+     * 非必填：网络类型2:本地代理id，需结合Aid工具使用在本地电脑端运行，微信登录期间，Aid工具需要不间断保持运行。此方式会覆盖proxy长效线路/自定义长效代理方式
      *
      * setProxyUser(string $proxyUser)
      * 非必填：自定义长效代理IP平台账号
