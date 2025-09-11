@@ -53,7 +53,8 @@ class Client extends \Webot\Channel\ECloud\Client
      */
     public function loginWechat(LoginWechatRequest $request): LoginWechatResponse
     {
-        return new LoginWechatResponse($this->http('/getIPadLoginInfo', $request));
+        //return new LoginWechatResponse($this->http('/getIPadLoginInfo', $request));
+        return new LoginWechatResponse($this->http('/simpleIPadLoginInfo', $request));
     }
 
     /**
