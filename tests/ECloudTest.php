@@ -1,10 +1,10 @@
 <?php
 namespace Webot\Tests;
 
-use Webot\Channel\ECloud\Account\Request\LogoutWechatRequest;
+use Webot\Channel\ECloud\Account\Request\LoginAuthRequest;
 use Webot\Channel\ECloud\Account\Request\QueryIsOnlineWechatRequest;
 use Webot\Channel\ECloud\Account\Request\QueryLoginWechatRequest;
-use Webot\Channel\ECloud\Account\Response\QueryLoginWechatResponse;
+use Webot\Channel\ECloud\Account\Response\CheckAuthCountResponse;
 use Webot\Channel\ECloud\Chatroom\Request\AgreeChatroomInviteRequest;
 use Webot\Channel\ECloud\Chatroom\Request\GetChatroomInfoRequest;
 use Webot\Channel\ECloud\Chatroom\Request\GetChatroomMemberInfoRequest;
@@ -231,7 +231,7 @@ class ECloudTest extends TestCase
         $request = new QueryLoginWechatRequest();
         $wechatList = $request->setAuthorization($this->authorization)
             ->request($this->app());
-        /** @var QueryLoginWechatResponse $response */
+        /** @var CheckAuthCountResponse $response */
         foreach ($wechatList as $response) {
             var_dump($response->getWId(), $response->getWcId());
         }

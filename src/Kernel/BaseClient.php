@@ -137,6 +137,7 @@ class BaseClient
         empty($options['connect_timeout']) && $options['connect_timeout'] = $this->app->config->get('connect_timeout', 10);
         empty($options['timeout']) && $options['timeout'] = $this->app->config->get('timeout', 10);
         empty($options['read_timeout']) && $options['read_timeout'] = $this->app->config->get('read_timeout', 10);
+        empty($options['verify']) && $options['verify'] = $this->app->config->get('verify', true);
 
         $this->baseUri = $this->app->config->get('baseUrl');
         $response = $this->performRequest($url, $method, $options);

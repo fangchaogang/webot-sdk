@@ -8,6 +8,7 @@ use Webot\Kernel\Support\Str;
  * Class Factory.
  *
  * @method static \Webot\Channel\ECloud\Application ECloud(array $config = []) >> E云管家渠道
+ * @method static \Webot\Channel\YCloud\Application YCloud(array $config = []) >> 有机云渠道
  *
  */
 class Factory

@@ -36,6 +36,12 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
         foreach ($items as $key => $value) {
             $this->set($key, $value);
         }
+        $this->init();
+    }
+
+    public function init()
+    {
+
     }
 
     /**
