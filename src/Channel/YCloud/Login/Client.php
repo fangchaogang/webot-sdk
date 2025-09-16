@@ -8,7 +8,7 @@ use Webot\Channel\YCloud\Login\Request\LoginWechatQrRequest;
 use Webot\Channel\YCloud\Login\Request\CreateRobotRequest;
 use Webot\Channel\YCloud\Login\Request\RemoveRobotRequest;
 use Webot\Channel\YCloud\Login\Response\CreateRobotResponse;
-use Webot\Channel\ECloud\Login\Response\LoginWechatQrResponse;
+use Webot\Channel\YCloud\Login\Response\LoginWechatQrResponse;
 use Webot\Kernel\Support\Collection;
 
 class Client extends \Webot\Channel\YCloud\Client
