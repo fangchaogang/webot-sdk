@@ -10,7 +10,7 @@ use Webot\Channel\YCloud\Request;
  * @method $this setVcode(string $vcode)
  * @method $this setRobotKey(string $robotKey)
  */
-class loginWechatCodeRequest extends Request
+class LoginWechatCodeRequest extends Request
 {
     /**
      * 参数说明：

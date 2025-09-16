@@ -99,7 +99,7 @@ class YCloudTest extends TestCase
 //        file_put_contents($file, $imageData);
 //        $r = $response->getRobotKey();
 
-        $request = new loginWechatCodeRequest();
+        $request = new LoginWechatCodeRequest();
         $response = $request->setToken($this->token)
             ->setRobotKey('c56e311671bc43d6bee6b7bfef0c64ba')
             ->setVcode('649959')
