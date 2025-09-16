@@ -10,6 +10,7 @@ use Webot\Channel\YCloud\Chatroom\Response\ChatroomInfoResponse;
 use Webot\Channel\YCloud\Chatroom\Response\ChatroomMemberInfoResponse;
 use Webot\Channel\YCloud\Login\Request\CreateRobotRequest;
 use Webot\Channel\YCloud\Login\Request\LoginWechatCheckRequest;
+use Webot\Channel\YCloud\Login\Request\loginWechatCodeRequest;
 use Webot\Channel\YCloud\Login\Request\LoginWechatQrRequest;
 use Webot\Channel\YCloud\Account\Request\CheckAuthCountRequest;
 use Webot\Channel\YCloud\Account\Request\LoginAuthRequest;
@@ -81,11 +82,11 @@ class YCloudTest extends TestCase
 //            ->setRobotKey('cba483a7202e4cdfa0f9fef7a26bb2be')
 //            ->request($this->app());
 //        var_dump($response);
-        $request = new LoginWechatQrRequest();
-        $response = $request->setToken($this->token)->setBizType($request::BIZ_TYPE_QW)
-            ->setRobotKey('a6b4058f265f4ae08abd68cd5bb9aa55')
-            ->request($this->app());
-        var_dump($response);
+//        $request = new LoginWechatQrRequest();
+//        $response = $request->setToken($this->token)->setBizType($request::BIZ_TYPE_QW)
+//            ->setRobotKey('a6b4058f265f4ae08abd68cd5bb9aa55')
+//            ->request($this->app());
+//        var_dump($response);
 //        $request = new CreateRobotRequest();
 //        $response = $request->setToken($this->token)
 //            ->setBizType($request::BIZ_TYPE_QW)
@@ -97,6 +98,14 @@ class YCloudTest extends TestCase
 //        $imageData = base64_decode($response->getQrCode());
 //        file_put_contents($file, $imageData);
 //        $r = $response->getRobotKey();
+
+        $request = new loginWechatCodeRequest();
+        $response = $request->setToken($this->token)
+            ->setRobotKey('c56e311671bc43d6bee6b7bfef0c64ba')
+            ->setVcode('649959')
+            ->request($this->app());
+        var_dump($response);
+
 
 //        $request = new LoginWechatCheckRequest();
 //        $response = $request->setToken($this->token)

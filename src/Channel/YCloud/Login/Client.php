@@ -9,6 +9,7 @@ use Webot\Channel\YCloud\Login\Request\CreateRobotRequest;
 use Webot\Channel\YCloud\Login\Request\RemoveRobotRequest;
 use Webot\Channel\YCloud\Login\Response\CreateRobotResponse;
 use Webot\Channel\YCloud\Login\Response\LoginWechatQrResponse;
+use Webot\Kernel\Exceptions\Exception;
 use Webot\Kernel\Support\Collection;
 
 class Client extends \Webot\Channel\YCloud\Client
@@ -76,8 +77,9 @@ class Client extends \Webot\Channel\YCloud\Client
     public function loginWechatCheck(LoginWechatCheckRequest $request)
     {
         $response = $this->http('/wxworkapi/robot/logincheck', $request);
-        if (!empty($response['msg']) && !empty($response['msg'] == '请扫码登录')) {
+        if (!empty($response['msg']) && $response['msg'] == '请扫码登录') {
             $response['code'] = -1;
+            throw new Exception($response['msg'], $response['code']);
         }
         return $response;
     }
