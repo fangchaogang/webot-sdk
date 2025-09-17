@@ -1,16 +1,10 @@
 <?php
 namespace Webot\Channel\YCloud\Chatroom;
 
-use Webot\Channel\ECloud\Chatroom\Response\GetChatroomMemberResponse;
-use Webot\Channel\YCloud\Account\Request\CheckAuthCountRequest;
-use Webot\Channel\YCloud\Account\Request\LoginAuthRequest;
-use Webot\Channel\YCloud\Account\Request\GetRobotRequest;
-use Webot\Channel\YCloud\Account\Response\CheckAuthCountResponse;
-use Webot\Channel\YCloud\Account\Response\LoginAuthResponse;
-use Webot\Channel\YCloud\Account\Response\RobotResponse;
 use Webot\Channel\YCloud\Chatroom\Request\GetChatroomListRequest;
 use Webot\Channel\YCloud\Chatroom\Request\GetChatroomMemberRequest;
 use Webot\Channel\YCloud\Chatroom\Response\ChatroomInfoResponse;
+use Webot\Channel\YCloud\Chatroom\Response\ChatroomMemberInfoResponse;
 use Webot\Kernel\Support\Collection;
 
 class Client extends \Webot\Channel\YCloud\Client
@@ -46,7 +40,7 @@ class Client extends \Webot\Channel\YCloud\Client
         $memberList = $this->http('/wxworkapi/group/member/list', $request);
         $list = new Collection();
         foreach ($memberList as $member) {
-            $list->push(new GetChatroomMemberResponse($member));
+            $list->push(new ChatroomMemberInfoResponse($member));
         }
         return $list;
     }
