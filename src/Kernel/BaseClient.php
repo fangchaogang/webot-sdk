@@ -197,7 +197,7 @@ class BaseClient
             if ($retries < $this->app->config->get('http.max_retries', 1) && $response && $body = $response->getBody()) {
                 // Retry on server errors
                 $response = json_decode($body, true);
-               if (empty($response['code'])) {
+               if (!isset($response['code'])) {
                    return true;
                }
             }
