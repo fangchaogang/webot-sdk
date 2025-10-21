@@ -9,6 +9,7 @@ use Webot\Channel\EWeCom\Login\Request\StopClientRequest;
 use Webot\Channel\EWeCom\Login\Response\CreateClientResponse;
 use Webot\Channel\EWeCom\Login\Response\LoginWechatQrCheckResponse;
 use Webot\Channel\EWeCom\Login\Response\LoginWechatQrResponse;
+use Webot\Channel\EWeCom\Login\Request\LoginWechatCodeRequest;
 
 class Client extends \Webot\Channel\EWeCom\Client
 {
@@ -65,6 +66,17 @@ class Client extends \Webot\Channel\EWeCom\Client
     public function loginWechatQrCheck(LoginWechatQrCheckRequest $request)
     {
         return new LoginWechatQrCheckResponse($this->http('/login/checkLoginQrCode', $request));
+    }
+
+    /**
+     * 提交验证码
+     * @param LoginWechatCodeRequest $request
+     * @return array|mixed
+     * @throws \Webot\Kernel\Exceptions\Exception
+     */
+    public function loginWechatCode(LoginWechatCodeRequest $request)
+    {
+        return $this->http('/login/verifyLoginQrcode', $request);
     }
 
 }
